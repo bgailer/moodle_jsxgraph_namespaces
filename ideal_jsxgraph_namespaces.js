@@ -1,5 +1,5 @@
 /*
-JSXGraph namespaces
+JSXGraph namespaces JS
 This file is developed for the use of JSXGraph in Moodle (STACK Questions and Moodle Filter).
 Author: Bernhard Gailer, OTH Amberg-Weiden.
 Latest changes: 13/09/2022

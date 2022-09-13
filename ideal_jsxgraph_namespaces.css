@@ -1,0 +1,50 @@
+/*
+JSXGraph namespaces CSS 
+This file is developed for the use of JSXGraph in Moodle (STACK Questions and Moodle Filter). 
+Author: Bernhard Gailer, OTH Amberg-Weiden. 
+Latest changes: 13/09/2022
+*/
+
+/*JSXGraph Vollbildmodus*/
+div[id^="ideal-fullscreenwrap"]:fullscreen {
+    background-color: #e7f3f5;
+    padding: 20px;
+}
+
+/*JSXGraph Toast*/
+div.ideal-jsxgraph-toast {
+    visibility: hidden !important;
+    background-color: #507da0;
+    padding: 8px;
+    width: 220px;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.15)
+}
+
+div.ideal-jsxgraph-toast.show {
+    visibility: visible !important;
+    animation: fadein 0.5s, fadeout 0.5s 2s;
+}
+
+/* JSXGraph Toast Keyframe fadein */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* JSXGraph Toast Keyframe fadeout */
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
