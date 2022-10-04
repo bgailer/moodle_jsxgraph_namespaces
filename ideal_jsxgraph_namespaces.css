@@ -2,13 +2,26 @@
 JSXGraph namespaces CSS 
 This file is developed for the use of JSXGraph in Moodle (STACK Questions and Moodle Filter). 
 Author: Bernhard Gailer, OTH Amberg-Weiden. 
-Latest changes: 13/09/2022
+Latest changes: 04/10/2022
 */
 
 /*JSXGraph Vollbildmodus*/
 div[id^="ideal-fullscreenwrap"]:fullscreen {
     background-color: #e7f3f5;
     padding: 20px;
+}
+
+/* Vollbild-Schaltfläche */
+.ideal-jsxgraph-fullscreen-element {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-bottom: 28px;
+}
+
+/* Vollbild-Schaltfläche hover */
+.ideal-jsxgraph-fullscreen-element:hover {
+    background-color: #aaaaaa;
 }
 
 /*JSXGraph Toast*/
@@ -22,6 +35,7 @@ div.ideal-jsxgraph-toast {
     box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.15)
 }
 
+/* Toast anzeigen */
 div.ideal-jsxgraph-toast.show {
     visibility: visible !important;
     animation: fadein 0.5s, fadeout 0.5s 2s;
@@ -47,4 +61,44 @@ div.ideal-jsxgraph-toast.show {
     to {
         opacity: 0;
     }
+}
+
+ /* Select Feld */
+ select.ideal-jsxgraph-select {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+
+}
+
+/* Dropdown-Bereich */
+div.ideal-jsxgraph-dropdown {
+    display: flex;
+    justify-content: right;
+    margin: 0 auto;
+    padding: 0.4em;
+}
+
+/* Input Gruppe */
+div.input-group {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+
+}
+
+/* Alle Elemente in der Input Gruppe */
+div.input-group * {
+    font-size: 1em !important;
+}
+
+/* Layout Anpassungen classic layout */
+div.input-group.classic-jxgbox-layout {
+    margin-top: 2px;
+    padding-right: 2px;
+}
+
+/* Layout Anpassungen new layout */
+div.input-group.new-jxgbox-layout>select {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
