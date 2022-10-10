@@ -276,7 +276,7 @@ var idealJSXGraphWorkarounds = new function () {
      * @param {number} timeBetweenResizeCalls - Zeitintervall zur Drosselung der Resize-Aufrufe auf dem Board
      * @param {boolean} needsWrapper - In Versionen < 1.3.0 wird das responsive Verhalten durch eine Wrapper Div hervorgerufen; bei Resize-Events wird dann die statischen Abmessungen der JSXGraph div angepasst. In Versionen <= 1.3.0 reicht es aus, die JSXGraph Div mit dem jxgnew Styles auszustatten, wodurch keine Wrapper div mehr gebraucht wird. Dieser Fall kommt z.B. vor, wenn wir mit STACK JSXGraph mit Version >=1.3.0 nutzen, da hier nur statische Abmessungen für das Board im Block angegeben werden können. 
      */
-    this.makeBoardResponsive = function (board, timeBetweenResizeCalls, needsWrapper = true) {
+    this.makeBoardResponsive = function (board, timeBetweenResizeCalls=200, needsWrapper = true) {
         /* Variablen */
         let resizeTimeout, width, height;
 
@@ -340,7 +340,7 @@ var idealJSXGraphWorkarounds = new function () {
     }
 
 
-    /** Resize-Logik Vollbildmodus */
+    /** Resize-Berechnung Vollbildmodus */
     var resizeCalc = function (board, initialWidth, initialHeight, scale) {
         /* Board Resize */
         if (initialWidth > initialHeight) {
