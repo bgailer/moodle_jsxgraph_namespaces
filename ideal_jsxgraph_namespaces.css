@@ -2,7 +2,7 @@
 JSXGraph namespaces CSS 
 This file is developed for the use of JSXGraph in Moodle (STACK Questions and Moodle Filter). 
 Author: Bernhard Gailer, OTH Amberg-Weiden. 
-Latest changes: 13/09/2022
+Latest changes: 10/10/2022
 */
 
 /*JSXGraph Vollbildmodus*/
@@ -11,40 +11,63 @@ div[id^="ideal-fullscreenwrap"]:fullscreen {
     padding: 20px;
 }
 
-/*JSXGraph Toast*/
-div.ideal-jsxgraph-toast {
-    visibility: hidden !important;
-    background-color: #507da0;
-    padding: 8px;
-    width: 220px;
-    z-index: 10;
-    text-align: center;
-    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.15)
+/* Vollbild-Schaltfläche */
+.ideal-jsxgraph-fullscreen-element {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0 5px;
+    margin-bottom: 28px;
 }
 
-div.ideal-jsxgraph-toast.show {
-    visibility: visible !important;
-    animation: fadein 0.5s, fadeout 0.5s 2s;
+/* Vollbild-Schaltfläche hover */
+.ideal-jsxgraph-fullscreen-element:hover {
+    background-color: #aaaaaa;
 }
 
-/* JSXGraph Toast Keyframe fadein */
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+/* Select Feld */
+select.ideal-jsxgraph-select {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
 }
 
-/* JSXGraph Toast Keyframe fadeout */
-@keyframes fadeout {
-    from {
-        opacity: 1;
-    }
+/* Dropdown-Bereich */
+div.ideal-jsxgraph-dropdown {
+    display: flex;
+    justify-content: right;
+    margin: 0 auto;
+    padding: 0.4em;
+}
 
-    to {
-        opacity: 0;
-    }
+/* Input Gruppe */
+div.input-group {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+
+}
+
+/* Alle Elemente in der Input Gruppe */
+div.input-group * {
+    font-size: 1em !important;
+}
+
+/* Layout Anpassungen classic layout */
+div.input-group.classic-jxgbox-layout {
+    margin-top: 4px;
+    padding-right: 4px;
+}
+
+/* Layout Anpassungen new layout */
+div.input-group.new-jxgbox-layout>select {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Feedback Icon Elemente */
+div.ideal-jsxgraph-feedbacksymbols {
+    background: #fcf8e3;
+    margin: .2em -.2em .2em;
+    padding: 0em .2em 0em .2em;
+    z-index: 10 !important;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.12);
 }
