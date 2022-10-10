@@ -78,12 +78,13 @@ var idealJSXGraphWorkarounds = new function () {
             frozen: true, fixed: true,
             cssClass: "ideal-jsxgraph-fullscreen-element"
         })
+        let divid = board.containerObj.id;
         /* Eventlistener Fullscreen Text Element */
         document.getElementById(fullscreenElement.rendNode.id).addEventListener("pointerdown", function () {
             /* Befinden wir uns im Vollbildmodus? */
             if (!document.fullscreenElement && !document.webkitIsFullScreen) {
                 /* Vollbildmodus-Methode aus Workarounds Namespace */
-                responsive && responsiveNew ? boardToFullscreenResponsiveNew('jxgbox') : responsive ? boardToFullscreenResponsive('jxgbox') : boardToFullscreenStatic('jxgbox', board);
+                responsive && responsiveNew ? boardToFullscreenResponsiveNew(divid) : responsive ? boardToFullscreenResponsive(divid) : boardToFullscreenStatic(divid, board);
             } else {
                 /* Vollbildmodus verlassen */
                 if (document.exitFullscreen) { document.exitFullscreen() }
@@ -220,7 +221,7 @@ var idealJSXGraphWorkarounds = new function () {
      * Erstellt eine Wrapper Div um das JSXGraph Board und passt die Höhe und Breite des Boards beim Vollbild-Event an.
      * @param {string} id - Board ID
      * @param {Object} board - JSXGraph board element
-     * @param {number} [scale=2] - Skalierung des Boards im Vollbild (Wenn Wert zu hoch, dann ANpassung an Bildschirm)
+     * @param {number} [scale=2] - Skalierung des Boards im Vollbild (Wenn Wert zu hoch, dann Anpassung an Bildschirm)
     */
     var boardToFullscreenStatic = function (id, board, scale = 2) {
         let wrapId, wrapNode, innerNode, parentNode;
